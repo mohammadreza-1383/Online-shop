@@ -39,7 +39,7 @@ Delivery</Link>
       <FontAwesomeIcon icon={faBars} className="text-3xl md:ml-[100px] sm: ml-[40px] max-[375px]:ml-[0px] " onClick={() => setOpen(!open)}/>
     </button>
   </div>
-  {open && (
+  {open && (  
     <div className="absolute top-full left-0 w-full bg-white flex flex-col gap-4 p-4 justify-center items-center lg:hidden">
       <Link to="/">Categories</Link>
       <Link to="/">Deals</Link>

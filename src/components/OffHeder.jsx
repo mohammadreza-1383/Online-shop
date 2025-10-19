@@ -16,7 +16,7 @@ function OffHeder() {
         <div className='md:text-[16px] md:font-medium md:text-white text-[8px] font-medium text-white'>Get 50%  Off on Selected Items   |   Shop Now</div>
         <div></div>
         
-        
+         
         </div>
     
     </>)

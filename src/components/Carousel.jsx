@@ -9,7 +9,8 @@ function Carousel({ dataprops }) {
       <img
         src={img}
         alt={name}
-        className="w-full h-auto aspect-square object-cover rounded-[10px]"
+        className="w-full h-auto aspect-square object-cover rounded-[10px] cursor-pointer
+"
       />
 
       <div className="w-full">
