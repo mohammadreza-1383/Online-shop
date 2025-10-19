@@ -8,7 +8,7 @@ import Account from '../pichers/heder/user.svg'
 function Heder() {
   const [open, setOpen] = useState(false);
 
-  return (
+  return ( 
     <>
    <nav className='h-[52px] flex justify-between  items-center gap-[30px] relative'>
 

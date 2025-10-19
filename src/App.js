@@ -23,7 +23,7 @@ function App() {
 <OffHeder/>
 
 <main className='flex justify-center items-center w-full'>
-  <div className='w-[1400px] bg-[#f9f9f9] p-[40px] max-[768px]:p-[0px]'>
+  <div className='w-[1400px] bg-[#f9f9f9] p-[40px] max-[1024px]:p-[0px]'>
   <Heder />
     <Routes>
     

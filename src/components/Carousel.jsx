@@ -1,28 +1,33 @@
 import React from 'react'
 import Rate from '../pichers/product/Rate.png'
-function Carousel(props) {
-    const {id , name , material , Description , img , price}=props.dataprops
+
+function Carousel({ dataprops }) {
+  const { name, material, Description, img, price } = dataprops
+
   return (
-    <>
-    
-    <div className='flex justify-center items-center gap-[30px] max-[526px]:gap-[20px] flex-col '>
-    <img src={img} alt=""   className="w-[320px] h-[320px] object-cover rounded-[10px] "/>
-    <div className='w-full'>
-        <div className='flex justify-between items-center gap-[30px] max-[768px]:gap-[20px]'>
-<div className='flex justify-center items-start  flex-col md:text-[16px] md:font-medium md:text-[#3e3e3e] text-[8px] font-medium text-[#3e3e3e]'>
-    <div>{name}</div>
-    <div> {material}</div>
-</div>
-<div className='md:text-[20px] md:font-medium md:text-[#3e3e3e] text-[8px] font-medium text-[#3e3e3e]'>{price}$</div>
+    <div className="flex flex-col items-center gap-3 max-w-[300px] w-full">
+      <img
+        src={img}
+        alt={name}
+        className="w-full h-auto aspect-square object-cover rounded-[10px]"
+      />
+
+      <div className="w-full">
+        <div className="flex justify-between items-center gap-4">
+          <div className="flex flex-col text-[#3e3e3e] text-sm md:text-base font-medium">
+            <div>{name}</div>
+            <div>{material}</div>
+          </div>
+          <div className="text-[#3e3e3e] font-medium md:text-lg">{price}$</div>
         </div>
-   <h4 className='mt-[5px] mb-[5px] md:text-[14px] md:font-medium md:text-[#7c7c7c] text-[8px] font-medium text-[#7c7c7c]'>
-    {Description}
-    </h4>
-    <img src={Rate} alt="" />
+
+        <h4 className="mt-1 mb-1 text-[#7c7c7c] text-xs md:text-sm font-medium">
+          {Description}
+        </h4>
+
+        <img src={Rate} alt="rate" className="w-[80px] h-auto" />
+      </div>
     </div>
-    </div>
-    
-        </>
   )
 }
 
