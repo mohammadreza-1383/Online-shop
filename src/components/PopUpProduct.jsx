@@ -5,7 +5,7 @@ import union2 from '../pichers/popup/Union2.svg'
 import { ShopContext } from '../context/shopContext';
 function PopUpProduct({ product, onClose }) {
     const [activeButton, setActiveButton] = useState(null);
-    const {cartItem , addToCart , removeFromCart}=useContext(ShopContext)
+    const { cartItem, addToCart, removeFromCart, isLoggedIn } = useContext(ShopContext);
     const buttons = ["S", "M", "L", "XL", "XXL"];    
   return (
     <div className="fixed top-[15px] right-[15px] bottom-[15px] w-[600px]  overflow-y-auto max-[526px]:w-[180px]  max-[769px]:w-[336px] max-[1025px]:w-[400px]
@@ -41,7 +41,7 @@ function PopUpProduct({ product, onClose }) {
     
     <div  className='flex justify-center items-center rounded-[5px]  w-[150px] max-[426px]:w-[100px] border-[1px] border-[#d9d9d9] gap-[12px] mt-[20px]'>
 <button onClick={()=>removeFromCart(product.id)} className=' py-[5px] px-[10px] max-[426px]:py-[0px] max-[426px]:px-[0px] flex justify-center items-center  max-[426px]:pl-[10px]'>  -</button>
-<p className='border-x-[1px] border-[#d9d9d9] py-[5px] px-[10px] ' >{cartItem?.filter((row)=>row.id===product.id)[0].count||0}</p>
+<p className='border-x-[1px] border-[#d9d9d9] py-[5px] px-[10px] ' >{cartItem?.find((row) => row.id === product.id)?.count || 0}</p>
 <button onClick={()=>addToCart(product.id)} className=' py-[5px] px-[10px]  max-[426px]:py-[0px] max-[426px]:px-[0px] max-[426px]:pr-[10px]   flex justify-center items-center'>+  </button>
 
     </div>

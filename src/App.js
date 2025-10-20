@@ -10,12 +10,13 @@ import Heder from './components/Heder';
 import Footer from './components/Footer';
 import OffHeder from './components/OffHeder';
 import Home from './pages/Home';
-import { ShopContextProviedr } from './context/shopContext';
+import { ShopContextProvider } from './context/shopContext';
+import Login from './pages/Login';
 function App() {
   const [num,setNum]=useState(0)
   return (
    <>
-   <ShopContextProviedr>
+   <ShopContextProvider>
    <Router>
 <OffHeder/>
 
@@ -29,13 +30,14 @@ function App() {
      
       <Route path='/about' element={<About/>} />
       <Route path='/profile/:d/:w' element={<Profile/>} />
+      <Route path='/login' element={<Login/>} />
       <Route path='*' element={<div>not found</div>} />
     </Routes>
     </div>
     </main>
     <Footer/>
    </Router>
-   </ShopContextProviedr>
+   </ShopContextProvider>
    </>
   );
 }
