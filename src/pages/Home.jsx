@@ -45,7 +45,7 @@ export default function Home() {
 
       {selectedProduct && (
         <>
-          <div className="fixed top-0 left-0 w-full h-full bg-black/50 z-40"></div>
+          <div onClick={() => setSelectedProduct(null)} className="fixed top-0 left-0 w-full h-full bg-black/50 z-40"></div>
           <PopUpProduct
             product={selectedProduct}
             onClose={() => setSelectedProduct(null)}

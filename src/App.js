@@ -1,10 +1,7 @@
 import { BrowserRouter as Router, Route, Routes, Form } from 'react-router-dom';
 import './App.css';
-import User from './components/User';
-import Contact from './pages/Contact';
 import About from './pages/About';
 import Profile from './pages/Profile';
-import { Count } from './context/Count';
 import { useState } from 'react';
 import HandleForm from './components/HandleForm';
 import { Provider } from 'react-redux';
@@ -13,12 +10,12 @@ import Heder from './components/Heder';
 import Footer from './components/Footer';
 import OffHeder from './components/OffHeder';
 import Home from './pages/Home';
+import { ShopContextProviedr } from './context/shopContext';
 function App() {
   const [num,setNum]=useState(0)
   return (
    <>
-   <Provider store={store}>
- <Count.Provider value={{num,setNum}}>
+   <ShopContextProviedr>
    <Router>
 <OffHeder/>
 
@@ -28,7 +25,6 @@ function App() {
     <Routes>
     
       <Route path='/' element={<Home/>} />
-      <Route path='/contact' element={<Contact/>} />
       <Route path='/form' element={<HandleForm/>} />
      
       <Route path='/about' element={<About/>} />
@@ -39,8 +35,7 @@ function App() {
     </main>
     <Footer/>
    </Router>
-    </Count.Provider>
-    </Provider>
+   </ShopContextProviedr>
    </>
   );
 }
